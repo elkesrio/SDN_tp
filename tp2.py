@@ -12,7 +12,7 @@ from numpy import *
 from sklearn import preprocessing
 
 #1
-X = [[1, -1, 2], [2, 2, 0], [0, 1, -1]]
+X = np.array([[1, -1, 2], [2, 2, 0], [0, 1, -1]])
 #2
 X_scaled = preprocessing.scale(X)
 #3
@@ -24,15 +24,21 @@ print np.var(X_scaled)
 from sklearn.preprocessing import MinMaxScaler
 print "\nPartie B"
 #1
-X2 = [[1, -1, 2], [2, 0, 0], [0, 1, -1]]
+X2 = np.array([[1, -1, 2], [2, 0, 0], [0, 1, -1]])
 #2
 print "Moyenne sur les variables avant la normalisation"
-print np.mean(X2[0])
-print np.mean(X2[1])
-print np.mean(X2[2])
+print np.mean(X2[:,0])
+print np.mean(X2[:,1])
+print np.mean(X2[:,2])
 #3
 print "Moyenne sur les variables après la normalisation"
 X2_scaled = MinMaxScaler([0,1]).fit_transform(X)
-print np.mean(X2_scaled[0])
-print np.mean(X2_scaled[1])
-print np.mean(X2_scaled[2])
+print np.mean(X2_scaled[:,0])
+print np.mean(X2_scaled[:,1])
+print np.mean(X2_scaled[:,2])
+
+#Partie C
+print "\nPartie C"
+#1
+iris = datasets.load_iris()
+#2
