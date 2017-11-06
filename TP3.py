@@ -28,7 +28,9 @@ def DG(x0, eta, eps = 0.01, nb_max = 1000):
     tmp_y = E(x0)
     while cond > eps and nb_iter < nb_max_iter:
         cond = abs( -eta * deriv_E(xi) )
-        xi = xi - eta * deriv_E(xi)
+        # to do ...
+        yi = xi - eta * deriv_E(xi)
+        # xi = xi - eta * deriv_E(xi)
         yi = E(xi)
         nb_iter = nb_iter + 1
         tmp_y = y0
